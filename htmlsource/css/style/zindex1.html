@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 박스의 크기는 100*100 배경색 임의 서로 다르게 */
+      .box-group {
+        position: relative;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+      .box1 {
+        background-color: darkblue;
+        top: 0;
+        left: 0;
+        z-index: 3;
+      }
+      .box2 {
+        background-color: crimson;
+        top: 50px;
+        left: 50px;
+        z-index: 1;
+      }
+      .box3 {
+        background-color: lavender;
+        top: 90px;
+        left: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        z-index : 요소의 쌓임에서 우선순위 지정(position이 적용된)
+    -->
+    <div class="box-group">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+    </div>
+  </body>
+</html>
