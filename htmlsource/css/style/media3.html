@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #ecf0f1;
+      }
+
+      .wrapper {
+        max-width: 60rem;
+        width: 100%;
+        margin: 2rem auto;
+      }
+      .flexbg {
+        display: flex;
+      }
+      .flexbg main {
+        background-color: snow;
+        padding: 25px;
+        order: 2;
+      }
+      .sidebar {
+        padding: 25px;
+        width: 20%;
+      }
+      .flexbg .left {
+        background-color: #3498db;
+        order: 1;
+      }
+      .flexbg .right {
+        background-color: #34495e;
+        order: 3;
+      }
+      @media screen and (max-width: 768px) {
+        .flexbg {
+          flex-wrap: wrap;
+        }
+        .flexbg main {
+          width: 100%;
+          order: 1;
+        }
+        .flexbg .sidebar {
+          width: 50%;
+        }
+        .flexbg .left {
+          order: 2;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .flexbg {
+          flex-direction: column;
+        }
+        .flexbg .sidebar {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flexbg">
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam optio voluptates reprehenderit veritatis
+          quaerat quae nisi, est aliquid assumenda eius, maiores natus pariatur facilis. Ipsa cupiditate dicta, ea
+          incidunt voluptate, autem facere quas reprehenderit provident impedit obcaecati qui sed, blanditiis quibusdam
+          cum praesentium. Rerum excepturi similique quisquam error fugiat impedit non laboriosam suscipit expedita!
+          Magni beatae ab consequuntur doloribus alias blanditiis expedita quis, provident quod nam fugiat vel quos,
+          modi sit, ullam numquam distinctio sed aliquam? Dignissimos sequi impedit cupiditate blanditiis, tempore
+          doloribus, velit facere dolorem incidunt et labore. Esse mollitia assumenda dignissimos nulla dolor harum
+          exercitationem tempora vel dicta?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam optio voluptates reprehenderit veritatis
+          quaerat quae nisi, est aliquid assumenda eius, maiores natus pariatur facilis. Ipsa cupiditate dicta, ea
+          incidunt voluptate, autem facere quas reprehenderit provident impedit obcaecati qui sed, blanditiis quibusdam
+          cum praesentium. Rerum excepturi similique quisquam error fugiat impedit non laboriosam suscipit expedita!
+          Magni beatae ab consequuntur doloribus alias blanditiis expedita quis, provident quod nam fugiat vel quos,
+          modi sit, ullam numquam distinctio sed aliquam? Dignissimos sequi impedit cupiditate blanditiis, tempore
+          doloribus, velit facere dolorem incidunt et labore. Esse mollitia assumenda dignissimos nulla dolor harum
+          exercitationem tempora vel dicta?
+        </p>
+      </main>
+      <aside class="sidebar left">
+        <p>You might have some lastest posts here on the left</p>
+      </aside>
+      <aside class="sidebar right">
+        <p>And some other widgets here on the right</p>
+      </aside>
+    </div>
+  </body>
+</html>

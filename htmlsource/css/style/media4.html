@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .row .column:nth-of-type(1) {
+        background-color: #aaa;
+      }
+      .row .column:nth-of-type(2) {
+        background-color: #bbb;
+      }
+      .row .column:nth-of-type(3) {
+        background-color: #ccc;
+      }
+      .row .column:nth-of-type(4) {
+        background-color: #ddd;
+      }
+      .row {
+        display: flex;
+      }
+      .row .column {
+        padding: 20px;
+        width: 25%;
+      }
+      @media screen and (max-width: 992px) {
+        .row {
+          flex-wrap: wrap;
+        }
+        .row .column {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .row .column {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quae odio placeat harum perspiciatis ducimus culpa,
+      id velit doloribus atque ad voluptatibus perferendis! Natus, nostrum maiores autem doloribus optio magni culpa
+      asperiores in? Voluptatibus soluta voluptates quo repudiandae, magni necessitatibus at itaque consequatur
+      inventore corrupti perferendis ratione nemo fugiat qui.
+    </p>
+    <div class="row">
+      <div class="column">
+        <h2>Column 1</h2>
+        <p>Some text...</p>
+      </div>
+      <div class="column">
+        <h2>Column 2</h2>
+        <p>Some text...</p>
+      </div>
+      <div class="column">
+        <h2>Column 3</h2>
+        <p>Some text...</p>
+      </div>
+      <div class="column">
+        <h2>Column 4</h2>
+        <p>Some text...</p>
+      </div>
+    </div>
+  </body>
+</html>
