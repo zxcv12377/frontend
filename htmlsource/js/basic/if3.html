@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 국영수 점수 입력 받은 후 학점 출력
+      const kor = Number(prompt("국어점수 입력"));
+      const eng = Number(prompt("영어점수 입력"));
+      const math = Number(prompt("수학점수 입력"));
+      document.writeln("국어" + kor);
+      document.writeln("영어" + eng);
+      document.writeln("수학" + math);
+      let avg = (kor + eng + math) / 3;
+      //   if (avg >= 90) {
+      //     alert("A");
+      //   } else if (avg >= 80) {
+      //     alert("B");
+      //   } else if (avg >= 70) {
+      //     alert("C");
+      //   } else if (avg >= 60) {
+      //     alert("D");
+      //   } else {
+      //     alert("F");
+      //   }
+      let temp = avg - (avg % 10);
+      switch (parseInt(temp)) {
+        case 90:
+          document.writeln("A");
+          break;
+        case 80:
+          document.writeln("B");
+          break;
+        case 70:
+          document.writeln("C");
+          break;
+        case 60:
+          document.writeln("D");
+          break;
+        default:
+          document.writeln("F");
+      }
+    </script>
+  </body>
+</html>
