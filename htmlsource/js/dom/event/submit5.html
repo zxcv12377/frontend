@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>덧셈 계산기</h3>
+    <form action="" method="post">
+      <input type="text" name="num1" id="num1" size="5" />
+      <select name="op" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input type="text" name="num2" id="num2" size="5" />
+      =
+      <input type="text" name="result" id="result" size="5" />
+      <button type="submit">결과</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const num1 = form.num1;
+        const num2 = form.num2;
+        const result = form.result;
+        const op = form.op;
+        if (isNaN(parseInt(num1.value)) || isNaN(parseInt(num2.value))) {
+          alert("숫자를 입력하세요");
+        } else {
+          switch (op.value) {
+            case "+":
+              result.value = parseInt(num1.value) + parseInt(num2.value);
+              break;
+            case "-":
+              result.value = parseInt(num1.value) - parseInt(num2.value);
+              break;
+            case "*":
+              result.value = parseInt(num1.value) * parseInt(num2.value);
+              break;
+            case "/":
+              result.value = parseInt(num1.value) / parseInt(num2.value);
+              break;
+            case "%":
+              result.value = parseInt(num1.value) % parseInt(num2.value);
+              break;
+
+            default:
+              break;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

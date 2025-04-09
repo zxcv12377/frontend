@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="target">
+    <div>
+      <input type="radio" name="gender" id="" value="남성" />남성
+      <input type="radio" name="gender" id="" value="여성" />여성
+    </div>
+    <script>
+      // const rds = document.querySelectorAll("[type = 'radio']");
+      // rds.forEach((rd) => {
+      //   rd.addEventListener("click", (e) => console.log(e.target.value));
+      // });
+      // rds[0].addEventListener("click", (e) => console.log(e.target.value));
+      // rds[1].addEventListener("click", (e) => console.log(e.target.value));
+      document.querySelector("div").addEventListener("click", (e) => console.log(e.target.value));
+    </script>
+  </body>
+</html>

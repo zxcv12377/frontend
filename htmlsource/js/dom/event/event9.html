@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark">Dark 🔁</span>
+      </div>
+    </nav>
+    <button>asd</button>
+    <script>
+      let mode = false;
+      const badge = document.querySelector(".badge");
+      badge.addEventListener("click", () => {
+        if (!mode) {
+          badge.classList.replace("bg-dark", "bg-warning");
+          badge.textContent = "Light 🔁";
+          badge.style.color = "black";
+        } else {
+          badge.classList.replace("bg-warning", "bg-dark");
+          badge.textContent = "Dark 🔁";
+          badge.style.color = "white";
+        }
+        mode = !mode;
+      });
+    </script>
+  </body>
+</html>
