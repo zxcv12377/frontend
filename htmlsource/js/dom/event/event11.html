@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div * {
+        padding: 10px;
+        margin: 10px;
+      }
+      [readonly] {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>숫자 맞추기</h2>
+    <p>
+      컴퓨터가 생성한 숫자를 맞추는 게임.<br />
+      숫자는 1 ~ 100 사이에 있습니다.
+    </p>
+    <div>
+      <label>
+        숫자
+        <input type="text" name="num1" id="num1" size="5" />
+        <button type="button">확인</button>
+      </label>
+    </div>
+    <div>
+      <label>
+        추측횟수
+        <input type="text" name="count" id="count" size="5" readonly />
+      </label>
+    </div>
+    <div>
+      <label>
+        힌트
+        <input type="text" name="hint" id="hint" size="15" readonly />
+      </label>
+    </div>
+    <script>
+      let cnt = 0;
+      const rand = Math.floor(Math.random() * 100) + 1;
+      const inputs = document.querySelectorAll("input");
+      document.querySelector("button").addEventListener("click", (e) => {
+        inputs[1].placeholder = ++cnt;
+
+        if (inputs[0].value == rand) {
+          inputs[2].placeholder = "정답입니다";
+          e.target.disabled = "true";
+        } else {
+          if (rand > inputs[0].value) {
+            inputs[2].placeholder = "추측값이 적습니다.";
+          } else {
+            inputs[2].placeholder = "추측값이 많습니다.";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

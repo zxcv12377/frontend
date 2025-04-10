@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="text" id="text" />
+    </div>
+    <script>
+      // 키보드 이벤트
+      // ketdown / keyup
+      document.querySelector("#text").addEventListener("keyup", (e) => {
+        if (e.keyCode == 13) {
+          alert("엔터");
+        }
+      });
+    </script>
+  </body>
+</html>

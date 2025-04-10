@@ -11,8 +11,17 @@
       crossorigin="anonymous"
     />
     <style>
-      span {
-        cursor: pointer;
+      body {
+        height: 4000px;
+      }
+      .navbar {
+        width: 100%;
+        position: fixed;
+        z-index: 5;
+      }
+      .navbar-brand {
+        font-size: 45px;
+        transition: all 1s;
       }
     </style>
   </head>
@@ -24,10 +33,18 @@
       </div>
     </nav>
     <script>
-      let mode = false;
-      const badge = document.querySelector(".badge");
-      badge.addEventListener("click", () => {
-        document.body.classList.toggle("bg-dark");
+      window.addEventListener("scroll", (e) => {
+        console.log("브라우저 viewport 높이", window.innerHeight);
+        console.log("브라우저 전체 높이", window.outerHeight);
+        const nav = document.querySelector(".navbar-brand");
+
+        if (window.scrollY > window.innerHeight / 2) {
+          console.log("asd");
+          nav.style.fontSize = "20px";
+        } else {
+          console.log("qwe");
+          nav.style.fontSize = "45px";
+        }
       });
     </script>
   </body>
