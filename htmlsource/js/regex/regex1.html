@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="exec"></p>
+    <script>
+      const origin = "JavaScript jQuery Ajax";
+      // 정규식 생성
+      //   const reg = new RegExp("Ajax");
+      const reg = /Ajax/;
+      // 자바스크립트 메소드 이용
+      console.log("exec() ", reg.exec(origin));
+      document.querySelector("#exec").textContent = reg.exec(origin);
+      //['Ajax', index: 18, input: 'JavaScript jQuery Ajax', groups: undefined]
+      console.log("test() ", reg.test(origin));
+      // true
+      console.log("match() ", origin.match(reg));
+      //['Ajax', index: 18, input: 'JavaScript jQuery Ajax', groups: undefined]
+      console.log("search() ", origin.search(reg));
+      // 18
+
+      const re = /(\w+)\s(\w+)/;
+      const origin2 = "John Smith";
+      console.log("== match");
+      console.log(origin2.match(re));
+      const newName = origin2.replace(re, "$2 $1");
+      console.log(newName);
+      // () : 캡쳐링
+      // (?:) : 비캡쳐링
+      const ko = "kokokokoko";
+      console.log("ko match", ko.match(/(?:ko)+/));
+    </script>
+  </body>
+</html>

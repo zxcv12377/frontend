@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        background-color: skyblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+      .container li {
+        list-style: none;
+        margin: 0 10px;
+        width: 25%;
+        cursor: pointer;
+      }
+      div {
+        padding: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+      <li>메뉴4</li>
+    </ul>
+    <div></div>
+
+    <script>
+      document.querySelector("li").addEventListener("click", () => {
+        fetch("https://zxcv12377.github.io/data/data.txt")
+          .then((res) => {
+            // res.ok == 200
+            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
+            //            500번대 (서버 에러)
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.text();
+          })
+          .then((data) => {
+            document.querySelector("div").innerHTML = data;
+          });
+      });
+      document.querySelector("ul li:nth-child(2)").addEventListener("click", () => {
+        fetch("https://zxcv12377.github.io/data/version.json")
+          .then((res) => {
+            // res.ok == 200
+            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
+            //            500번대 (서버 에러)
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((data) => {
+            // console.log(data.codename)
+            let str = `<ul>
+              <li>version : ${data.version}</li>
+             <li>codename : ${data.codename}</li>
+             </ul>`;
+            document.querySelector("div").innerHTML = str;
+          });
+      });
+      let str = "";
+      document.querySelector("ul li:nth-child(3)").addEventListener("click", () => {
+        fetch("https://zxcv12377.github.io/data/version2.json")
+          .then((res) => {
+            // res.ok == 200
+            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
+            //            500번대 (서버 에러)
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((datas) => {
+            // console.log(datas);
+            str += `<ul>`;
+            for (const data of datas) {
+              str += `<li>version : ${data.version}</li>
+                        <li>codename : ${data.codename}</li>`;
+            }
+            str += `</ul>`;
+            document.querySelector("div").innerHTML = str;
+          });
+      });
+      document.querySelector("ul li:nth-child(4)").addEventListener("click", () => {
+        fetch("https://zxcv12377.github.io/data/MOCK_DATA.json")
+          .then((res) => {
+            // res.ok == 200
+            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
+            //            500번대 (서버 에러)
+            if (!res.ok) throw new Error("경로를 확인해 주세요");
+            return res.json();
+          })
+          .then((datas) => {
+            // console.log(datas);
+            str += `<table>`;
+            str += `<tr>
+              <th>id</th>
+              <th>first_name</th>
+              <th>email</th>
+              <th>gender</th>
+              </tr>`;
+            for (const data of datas) {
+              str += `<tr>
+                  <td>id : ${data.id}</td>
+                  <td>first_name : ${data.first_name}</td>
+                  <td>email : ${data.email}</td>
+                  <td>gender : ${data.gender}</td>
+                  </tr>`;
+            }
+            str += `</table>`;
+            document.querySelector("div").innerHTML = str;
+          });
+      });
+    </script>
+  </body>
+</html>
