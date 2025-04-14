@@ -64,9 +64,6 @@
       document.querySelector("ul li:nth-child(2)").addEventListener("click", () => {
         fetch("https://zxcv12377.github.io/data/version.json")
           .then((res) => {
-            // res.ok == 200
-            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
-            //            500번대 (서버 에러)
             if (!res.ok) throw new Error("경로를 확인해 주세요");
             return res.json();
           })
@@ -83,9 +80,6 @@
       document.querySelector("ul li:nth-child(3)").addEventListener("click", () => {
         fetch("https://zxcv12377.github.io/data/version2.json")
           .then((res) => {
-            // res.ok == 200
-            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
-            //            500번대 (서버 에러)
             if (!res.ok) throw new Error("경로를 확인해 주세요");
             return res.json();
           })
@@ -103,9 +97,6 @@
       document.querySelector("ul li:nth-child(4)").addEventListener("click", () => {
         fetch("https://zxcv12377.github.io/data/MOCK_DATA.json")
           .then((res) => {
-            // res.ok == 200
-            //            400번대 (404 - 경로 틀림, 403 - 권한없음)
-            //            500번대 (서버 에러)
             if (!res.ok) throw new Error("경로를 확인해 주세요");
             return res.json();
           })
