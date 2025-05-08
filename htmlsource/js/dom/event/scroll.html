@@ -12,14 +12,17 @@
   </head>
   <body>
     <script>
-      // scroll움직임 감지
-      window.addEventListener("scroll", (e) => {
-        // scrollY : 세로 스크롤바 위치값
+      // scroll 움직임 감지
+      window.addEventListener("scroll", () => {
+        // scrollY : 세로 스크롤바 위치
         // console.log(window.scrollY);
-        // scrollTo(x,y) : 스크롤바 강제 이동
-        // window.scrollTo(0, 200);
-        // scrollBy(x,y) : 스크롤바를 값만큼 계속 움직임
-        // window.scrollBy(0, 100);
+        // 스크롤바 강제 이동
+        window.scrollTo(0, 200);
+        console.log(window.scrollY);
+
+        // 현재 위치에서 스크롤 이동
+        window.scrollBy(0, 100);
+        console.log(window.scrollY);
       });
     </script>
   </body>

@@ -1,18 +1,18 @@
 // 화살표 함수
 const myFunc1 = () => {};
 
-const showMessage = () => console.log("Hello, JS");
+const showMessage = () => console.log("안녕하세요");
 
 const multiply = (x, y) => console.log(`${x}, ${y}`);
 
 const myFunc2 = (x, y) => x * y;
 
-const myFunc3 = (x) => {
-  if (x % 3 == 0) {
-    if (x % 9 == 0) {
-      console.log("박수 x2");
-    } else {
+const myFunc3 = (num) => {
+  if (num % 3 == 0) {
+    if (num % 9 !== 0) {
       console.log("박수");
+    } else {
+      console.log("박수 x 2");
     }
   } else {
     console.log("통과");

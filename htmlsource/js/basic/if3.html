@@ -7,41 +7,44 @@
   </head>
   <body>
     <script>
-      // 국영수 점수 입력 받은 후 학점 출력
-      const kor = Number(prompt("국어점수 입력"));
-      const eng = Number(prompt("영어점수 입력"));
-      const math = Number(prompt("수학점수 입력"));
-      document.writeln("국어" + kor);
-      document.writeln("영어" + eng);
-      document.writeln("수학" + math);
-      let avg = (kor + eng + math) / 3;
+      // 국어,영어,수학 점수를 입력받은 후 평균점수에 맞는 학점 출력
+      // >=90 A, >=80 B, >=70 C, >=60 D, F
+      let kor = Number(prompt("국어 점수를 입력해주세요"));
+      let eng = Number(prompt("영어 점수를 입력해주세요"));
+      let math = Number(prompt("수학 점수를 입력해주세요"));
+
+      const avg = (kor + eng + math) / 3;
+
       //   if (avg >= 90) {
-      //     alert("A");
+      //     document.write("<h3>A</h3>");
       //   } else if (avg >= 80) {
-      //     alert("B");
+      //     document.write("<h3>B</h3>");
       //   } else if (avg >= 70) {
-      //     alert("C");
+      //     document.write("<h3>C</h3>");
       //   } else if (avg >= 60) {
-      //     alert("D");
+      //     document.write("<h3>D</h3>");
       //   } else {
-      //     alert("F");
+      //     document.write("<h3>F</h3>");
       //   }
-      let temp = avg - (avg % 10);
-      switch (parseInt(temp)) {
-        case 90:
-          document.writeln("A");
+
+      switch (parseInt(avg / 10)) {
+        case 10:
+        case 9:
+          document.write("<h3>A</h3>");
           break;
-        case 80:
-          document.writeln("B");
+        case 10:
+        case 8:
+          document.write("<h3>B</h3>");
           break;
-        case 70:
-          document.writeln("C");
+        case 7:
+          document.write("<h3>C</h3>");
           break;
-        case 60:
-          document.writeln("D");
+        case 6:
+          document.write("<h3>D</h3>");
           break;
         default:
-          document.writeln("F");
+          document.write("<h3>F</h3>");
+          break;
       }
     </script>
   </body>

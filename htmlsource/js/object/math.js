@@ -1,4 +1,5 @@
 // Math.
+
 console.log(`PI : ${Math.PI}`);
 console.log(`내림 : ${Math.floor(3.14159)}`);
 console.log(`올림 : ${Math.ceil(2.123)}`);

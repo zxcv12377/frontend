@@ -8,13 +8,11 @@
   <body>
     <script>
       function showOK() {
-        document.write("보감");
+        document.write("동의");
       }
-
       function showCancel() {
         document.write("취소");
       }
-
       function ask(question, yes, no) {
         if (confirm(question)) {
           yes();
@@ -23,7 +21,7 @@
         }
       }
 
-      ask("동의?", showOK, showCancel);
+      ask("동의하십니까?", showOK, showCancel);
     </script>
   </body>
 </html>

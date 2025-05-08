@@ -6,12 +6,20 @@
     <title>Document</title>
     <style>
       .alert-box {
-        background-color: skyblue;
+        background: skyblue;
         padding: 20px;
         color: white;
         border-radius: 5px;
+        /* 알림창 숨기기 */
+        display: none;
         margin: 10px;
         position: relative;
+      }
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
       }
       button {
         border: 0;
@@ -20,32 +28,23 @@
         background-color: rgb(54, 62, 228);
         color: white;
       }
-      .hide {
-        visibility: hidden;
-      }
-      .close {
-        position: absolute;
-        right: 10px;
-        top: 5px;
-        cursor: pointer;
-      }
-      .show {
-        cursor: pointer;
-      }
     </style>
   </head>
   <body>
-    <div class="alert-box hide">
+    <div class="alert-box">
       알림창
       <span class="close">X</span>
     </div>
     <button class="show">알림창 보여주기</button>
     <script>
-      const myAlert = document.querySelector(".alert-box");
-      const closeAlert = document.querySelector(".close");
-      const show = document.querySelector(".show");
-      show.addEventListener("click", () => myAlert.classList.remove("hide"));
-      closeAlert.addEventListener("click", () => myAlert.classList.add("hide"));
+      document.querySelector(".show").addEventListener("click", () => {
+        document.querySelector(".alert-box").style.display = "block";
+      });
+
+      // X 누르면 alert-box 닫기
+      document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".alert-box").style.display = "none";
+      });
     </script>
   </body>
 </html>

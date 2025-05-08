@@ -31,12 +31,15 @@
       // change : 요소 변경이 끝나면 발생
       // input : 값을 수정할 때마다 발생
       // blur : 기본값에 대해서도 이벤트 발생
+
       const name = document.querySelector("#name");
       const name2 = document.querySelector("#name2");
 
+      //사용자 입력값 가져와서 대문자로 변경한 후 다시 보여주기
       name.addEventListener("change", (e) => (e.target.value = e.target.value.toLowerCase()));
       //name2.addEventListener("input", (e) => (e.target.value = e.target.value.toLowerCase()));
       name2.addEventListener("blur", (e) => (e.target.value = e.target.value.toLowerCase()));
+
       document.querySelector("#fruit").addEventListener("change", (e) => console.log(e.target.value));
     </script>
   </body>

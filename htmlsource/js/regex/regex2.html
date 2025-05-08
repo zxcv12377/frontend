@@ -18,27 +18,32 @@
       <button type="submit">전송</button>
     </form>
     <script>
-      const regEx = /^\d{3}-\d{4}-\d{4}$/;
-      const regExName = /^[가-힣]{2,5}$/;
-      // 폼 전송 시 submit 중지 후 전화번호가 원하는 형식대로 입력되었는지 확인하기
-      //   const form = document.querySelector("form");
-      //   form.addEventListener("submit", (e) => {
+      // 이름이 한글로 입력(2~5)되었는지 확인하기
+      const regName = /^[가-힣]{2,5}$/;
       document.querySelector("#name").addEventListener("change", (e) => {
-        e.preventDefault();
         let origin = e.target;
-        0;
-        if (!regExName.test(origin.value)) {
-          alert("이름을 확인해주세요");
+
+        //패턴과 일치하지 않을 때 경고창 보이기
+        if (!regName.test(origin.value)) {
+          alert("이름을 확인해 주세요");
           origin.select();
           return;
         }
       });
-      const tel = document.querySelector("#tel");
-      tel.addEventListener("change", (e) => {
-        e.preventDefault();
+
+      //폼 전송 시 submit 중지 후 전화번호가 원하는 형식대로 입력 되었는지 확인하기
+      //숫자3-숫자4-숫자4
+      const regEx = /\d{3}-\d{4}-\d{4}/;
+
+      // document.querySelector("form").addEventListener("submit", (e) => {
+      //e.preventDefault();
+
+      document.querySelector("#tel").addEventListener("change", (e) => {
         let origin = e.target;
+
+        //패턴과 일치하지 않을 때 경고창 보이기
         if (!regEx.test(origin.value)) {
-          alert("전화번호 다시 입력");
+          alert("전화번호를 확인해 주세요");
           origin.select();
           return;
         }

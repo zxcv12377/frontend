@@ -6,22 +6,14 @@
     <title>Document</title>
     <style>
       .alert-box {
-        background-color: skyblue;
+        background: skyblue;
         padding: 20px;
         color: white;
         border-radius: 5px;
+        /* 알림창 숨기기 */
+        display: none;
         margin: 10px;
         position: relative;
-      }
-      button {
-        border: 0;
-        border-radius: 10px;
-        padding: 10px;
-        background-color: rgb(54, 62, 228);
-        color: white;
-      }
-      .hide {
-        visibility: hidden;
       }
       .close {
         position: absolute;
@@ -29,8 +21,12 @@
         top: 5px;
         cursor: pointer;
       }
-      .show {
-        cursor: pointer;
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(54, 62, 228);
+        color: white;
       }
     </style>
   </head>
@@ -42,28 +38,25 @@
     <button class="show">버튼1</button>
     <button class="show">버튼2</button>
     <script>
-      const div = document.querySelector(".alert-box");
-      const btns = document.querySelectorAll(".show");
-      const closeAlert = document.querySelector(".close");
+      const alertBox = document.querySelector(".alert-box");
+      //버튼1 클릭 시 알림창=>아이디를 입력해 주세요
+      const btns = document.querySelectorAll("button");
+
       btns[0].addEventListener("click", () => {
-        div.classList.remove("hide");
-        div.firstChild.nodeValue = "아이디를 입력하세요";
-        // div.innerHTML = "아이디를 입력해 주세요. <span class='close'>X</span>";
-        // const span = document.createElement("span");
-        // span.classList.add("close");
-        // span.textContent = "X";
-        // div.insertAdjacentElement("afterbegin", span);
+        alertBox.style.display = "block";
+        alertBox.firstChild.nodeValue = "아이디를 입력해 주세요";
+        //alertBox.textContent = "아이디를 입력해 주세요";
       });
+      //버튼2 클릭 시 알림창=>비밀번호를 입력해 주세요
       btns[1].addEventListener("click", () => {
-        div.classList.remove("hide");
-        div.firstChild.nodeValue = "비밀번호를 입력하세요";
-        // div.innerHTML = "비밀번호를 입력해 주세요. <span class='close'>X</span>";
-        // const span = document.createElement("span");
-        // span.classList.add("close");
-        // span.textContent = "X";
-        // div.insertAdjacentElement("afterbegin", span);
+        alertBox.style.display = "block";
+        alertBox.firstChild.nodeValue = "비밀번호를 입력해 주세요";
       });
-      closeAlert.addEventListener("click", () => div.classList.add("hide"));
+
+      // X 누르면 alert-box 닫기
+      document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".alert-box").style.display = "none";
+      });
     </script>
   </body>
 </html>

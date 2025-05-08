@@ -16,26 +16,36 @@
       <form action="" method="post">
         <div class="mb-3">
           <label for="text" class="form-label">text</label>
-          <input type="text" class="form-control" id="text" aria-describedby="emailHelp" name="text" />
+          <input type="text" class="form-control" id="text" aria-describedby="text" name="text" />
         </div>
         <button type="submit" class="btn btn-success">제출</button>
         <div id="result"></div>
       </form>
-    </div>
-    <script>
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const text = form.text;
-        console.log(text.value);
-        if (text.value === "") {
-          alert("텍스트를 입력하시옹");
-          text.focus();
-          return;
-        }
+      <script>
+        // submit 이벤트 : form 요소
+        document.querySelector("form").addEventListener("submit", (e) => {
+          // 폼 submit 중지
+          e.preventDefault();
 
-        document.querySelector("#result").textContent = text.value;
-      });
-    </script>
+          const form = e.target;
+
+          // text value 가 비어 있는지 확인
+          // form 안 input 요소 찾기
+          // document.querySelector(".form-control");
+          // form.이름
+          const text = form.text;
+          console.log(text.value);
+
+          if (text.value === "") {
+            alert("내용 입력");
+            text.focus();
+            return;
+          }
+
+          // 사용자가 입력한 내용을 result 영역 안에 보여주기
+          document.querySelector("#result").textContent = text.value;
+        });
+      </script>
+    </div>
   </body>
 </html>

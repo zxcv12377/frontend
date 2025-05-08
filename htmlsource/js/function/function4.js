@@ -1,27 +1,26 @@
-// 콜백 함수 : 함수를 함수의 인자로 전달, 전달된 함수가 나중에 호출
+// 콜백함수 : 함수를 함수의 인자로 전달, 전달된 함수가 나중에 호출
 function showOK() {
   console.log("동의");
 }
-
 function showCancel() {
   console.log("취소");
 }
-
 function ask(question, yes, no) {}
 
-ask("동의?", showOK, showCancel);
+ask("동의하십니까?", showOK, showCancel);
 
 const foo = function (func) {
   func();
 };
 
-foo(() => console.log("함술 인자로 전달"));
+foo(() => console.log("함수를 인자로 전달하기"));
 
 function callTenTimes(callback) {
-  for (let i = 0; i < 5; i++) {
+  for (let index = 0; index < 5; index++) {
     callback();
   }
 }
+
 const callback = () => console.log("함수호출");
 
 callTenTimes(callback);
@@ -31,10 +30,10 @@ callTenTimes(callback);
 // console.log("시작");
 // setTimeout(() => {
 //   console.log("3초가 지났습니다.");
-// }, 3000);
-// console.log("마무으리");
+// }, 3000); // ms
+// console.log("마무리");
 
-// // 2초마다 호출
+// 2초 간격으로 호출
 // setInterval(() => {
 //   console.log("안녕");
 // }, 2000);
@@ -46,7 +45,7 @@ console.log(parseFloat("10.55"));
 console.log(parseFloat("10.55%"));
 
 // encodeURI
-// encodeURIComponent : 영문, 숫자, 일부기호 제외 인코딩
+// encodeURIComponent : 영문,숫자,일부기호 제외 인코딩
 console.log(encodeURI("http://localhost:8080/basic/info.html?name=홍길동"));
 console.log(encodeURIComponent("http://localhost:8080/basic/info.html?name=홍길동"));
 

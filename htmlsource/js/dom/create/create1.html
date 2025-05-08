@@ -8,6 +8,7 @@
   <body>
     <h1>Header</h1>
     <script>
+      //body 동적으로 구성
       const info = function () {
         let output = "";
 
@@ -15,13 +16,13 @@
         output += "<li>List1</li>";
         output += "<li>List2</li>";
         output += "<li>List3</li>";
-        output += "<ul>";
+        output += "</ul>";
 
+        //body 태그 자식으로 생성
         document.body.innerHTML += output;
       };
 
       info();
-      // body 동적으로 구성
     </script>
   </body>
 </html>
